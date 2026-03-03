@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,19 +19,19 @@
     --card-foreground: 330 0% 0.3%;
     --popover: 0 0% 100%;
     --popover-foreground: 330 0% 0.3%;
-    --primary: 0 0% 4.5%;
-    --primary-foreground: 0 0% 97.5%;
-    --secondary: 0 0% 97.3%;
-    --secondary-foreground: 0 0% 4.5%;
+    --primary: 216 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 259 72% 58%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 97.3%;
     --muted-foreground: 0 0% 55.7%;
-    --accent: 0 0% 97.3%;
-    --accent-foreground: 0 0% 4.5%;
-    --destructive: 359.9132 100.2494% 67.8807%;
+    --accent: 259 72% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 359.9 100% 67.9%;
     --destructive-foreground: 0 0% 0%;
     --border: 0 0% 92.2%;
     --input: 0 0% 92.2%;
-    --ring: 0 0% 70.8%;
+    --ring: 216 100% 50%;
     --chart-1: 41.1 71.2% 54.4%;
     --chart-2: 184.7 32.4% 48.6%;
     --chart-3: 227.4 15.2% 33.3%;
@@ -37,48 +39,48 @@
     --chart-5: 70.1 74.3% 70.5%;
     --sidebar: 0 0% 97.5%;
     --sidebar-foreground: 330 0% 0.3%;
-    --sidebar-primary: 0 0% 4.5%;
-    --sidebar-primary-foreground: 0 0% 97.5%;
+    --sidebar-primary: 216 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 97.3%;
     --sidebar-accent-foreground: 0 0% 4.5%;
     --sidebar-border: 0 0% 92.2%;
-    --sidebar-ring: 0 0% 70.8%;
+    --sidebar-ring: 216 100% 50%;
   }
 
   .dark {
     --radius: 0.55rem;
-    --background: 330 0% 0.3%;
-    --foreground: 0 0% 97.5%;
-    --card: 0 0% 4.5%;
-    --card-foreground: 0 0% 97.5%;
-    --popover: 0 0% 8.6%;
-    --popover-foreground: 0 0% 97.5%;
-    --primary: 0 0% 92.2%;
-    --primary-foreground: 0 0% 4.5%;
-    --secondary: 0 0% 8.6%;
-    --secondary-foreground: 0 0% 97.5%;
-    --muted: 0 0% 8.6%;
-    --muted-foreground: 0 0% 70.8%;
-    --accent: 0 0% 21.2%;
-    --accent-foreground: 0 0% 97.5%;
-    --destructive: 359.9132 100.2494% 67.8807%;
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 6% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 6% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 216 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 259 72% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 259 72% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 359.9 100% 67.9%;
     --destructive-foreground: 0 0% 0%;
-    --border: 0 0% 100% / 15%;
+    --border: 0 0% 100% / 10%;
     --input: 0 0% 100% / 15%;
-    --ring: 0 0% 55.7%;
+    --ring: 216 100% 50%;
     --chart-1: 264.4 77.2% 41.9%;
     --chart-2: 162.5 46.7% 57.3%;
     --chart-3: 70.1 74.3% 70.5%;
     --chart-4: 303.9 75.8% 51.6%;
     --chart-5: 16.4 84.7% 55.4%;
-    --sidebar: 0 0% 4.5%;
-    --sidebar-foreground: 0 0% 97.5%;
-    --sidebar-primary: 264.4 77.2% 41.9%;
-    --sidebar-primary-foreground: 0 0% 97.5%;
-    --sidebar-accent: 0 0% 8.6%;
-    --sidebar-accent-foreground: 0 0% 97.5%;
+    --sidebar: 240 6% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 216 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 100% / 10%;
-    --sidebar-ring: 0 0% 43.9%;
+    --sidebar-ring: 216 100% 50%;
   }
 }
 
@@ -87,7 +89,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }
 
@@ -95,4 +97,27 @@
   .container {
     @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl w-full;
   }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-lg;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
 }
